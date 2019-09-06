@@ -1,0 +1,40 @@
+<p></p>
+<div class="container">
+    <br><br><br>
+    <div class="row"  *ngFor="let product of products">
+      <div class="col-md-4 product">
+          <img src={{product.imgUrl}} width="60%" alt="t-shirt" class="img-fluid"></div>
+      <div class="col-md-8 info">
+        <div class="info-wrapper">
+          <h2>{{product.title}}</h2>
+          <p class="lead">
+            {{product.name}} to make your moment more special as beautiful you listen and imagine.
+          </p>
+          <ul class="product-info list-unstyled">
+                <li class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Based on {{product.reviewCount}} reviews </li>
+                <li class="price">&#8377; {{product.price}}</li>
+         </ul>
+         
+        </div><a href="#" class="add-to-cart btn btn-primary">add to cart <i class="icon-cart-1"></i></a>
+        
+      </div>
+      <br><br>
+      <h3>All time favourite features</h3>
+      <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of product.topScores">
+                  <td>@</td>
+                  <td>{{x.topic}}</td>
+                  <td>{{x.score}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
